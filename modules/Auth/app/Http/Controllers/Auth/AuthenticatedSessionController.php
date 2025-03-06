@@ -3,11 +3,7 @@
 namespace Modules\Auth\App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-<<<<<<< HEAD
-use Modules\Auth\App\Http\Requests\LoginRequest;
-=======
 use Modules\Auth\App\Http\Requests\Auth\LoginRequest;
->>>>>>> ad3e6a6 (Modified Authenticated section controller namespace)
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +16,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('auth::login');
+        return view('auth::auth.login');
     }
 
     /**
