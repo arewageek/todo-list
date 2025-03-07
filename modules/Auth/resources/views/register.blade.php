@@ -31,7 +31,7 @@
                         <div class="w-full lg:w-[45%] flex flex-col gap-y-2">
                             <label class="form-label text-gray-200 fs-6" for="phone">Phone number <span
                                     class="text-danger"></span></label>
-                            <input class="rounded-xl" id="phone"required name="phone" type="tel" required>
+                            <input class="rounded-xl" id="phone"required name="phone" type="tel">
                         </div>
  
                         <div class="w-full lg:w-[45%] flex flex-col gap-y-2">
