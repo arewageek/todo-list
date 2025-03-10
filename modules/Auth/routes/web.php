@@ -17,3 +17,6 @@ use Modules\Auth\App\Http\Controllers\AuthController;
 Route::group([], function () {
     Route::resource('auth', AuthController::class)->names('auth');
 });
+
+
+require __DIR__.'/auth.php';
