@@ -17,3 +17,7 @@ use Modules\Task\App\Http\Controllers\TaskController;
 Route::group([], function () {
     Route::resource('task', TaskController::class)->names('task');
 });
+
+Route::get("my-day", function() {
+    return view('task::my-day');
+});
