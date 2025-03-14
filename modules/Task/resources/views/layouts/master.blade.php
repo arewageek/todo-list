@@ -19,11 +19,13 @@
 
     {{-- Vite CSS --}}
     {{-- {{ module_vite('build-task', 'resources/assets/sass/app.scss', storage_path('vite.hot')) }} --}}
+    @livewireStyles
 </head>
 
 <body>
     @yield('content')
 
+    @livewireScripts
     {{-- Vite JS --}}
     {{-- {{ module_vite('build-task', 'resources/assets/js/app.js', storage_path('vite.hot')) }} --}}
 </body>
