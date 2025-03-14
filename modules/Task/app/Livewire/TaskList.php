@@ -27,17 +27,18 @@ class TaskList extends Component
 
         $this->validate([
             'title' => 'required|string|max:255',
-            'description' => 'nullable|string'
+            'description' => 'nullable|string',
         ]);
 
+        // dd($this->description, $this->title);
         $user = User::find(Auth::user()->id);
-        $task = $user->create([
+        $task = $user->tasks()->create([
             'title' => $this->title,
-            'description' =>$this->description
+            'description' => $this->description,
         ]);
 
         $this->tasks->push($task);
-        $this->reset();
+        $this->reset(['title', 'description']);
 
         session()->flash('message', 'Task created successfully');
 
