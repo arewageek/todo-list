@@ -3,5 +3,5 @@
 @section('content')
     <h1>Hello World</h1>
 
-    <p>Module: {!! config('task.name') !!}</p>
+    @livewire('task-list')
 @endsection

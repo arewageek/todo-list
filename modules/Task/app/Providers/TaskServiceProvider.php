@@ -8,6 +8,9 @@ use Nwidart\Modules\Traits\PathNamespace;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
+use Livewire\Livewire;
+use Modules\Task\App\Livewire\TaskList;
+
 class TaskServiceProvider extends ServiceProvider
 {
     use PathNamespace;
@@ -27,6 +30,8 @@ class TaskServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->name, 'database/migrations'));
+
+        Livewire::component('task-list', TaskList::class);
     }
 
     /**
