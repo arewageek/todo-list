@@ -42,3 +42,6 @@
 .create-task-form::placeholder{
     color: white;
 }
+#modal-form-input {
+    color: #fff5;
+}
