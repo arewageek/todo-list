@@ -21,7 +21,14 @@
     
     
                 </div>
-                <button wire:click="deleteTask({{ $task->id }})">Delete</button>
+                <div class="d-flex gap-2">
+                    <button wire:click="$dispatch('loadTask', {taskId: {{ $task->id }}})"  class="text-white">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button wire:click="deleteTask({{ $task->id }})" class="text-white">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
             </div>
         @endforeach
     </div>
@@ -43,4 +50,5 @@
             </form>
         </div>
     </div>
+
 </div>

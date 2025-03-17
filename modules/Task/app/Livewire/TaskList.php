@@ -14,6 +14,9 @@ class TaskList extends Component
     public $title;
     public $description;
 
+    // livewire events
+    protected $listeners = ['taskUpdated' => 'refresh'];
+
     public function mount(){
         $this->tasks = Auth::user()->tasks ?? [];
     }
@@ -53,6 +56,9 @@ class TaskList extends Component
 
     }
 
+    public function refresh(){
+        $this->tasks = Auth::user()->tasks()->get();
+    }
 
     public function render()
     {
