@@ -41,7 +41,7 @@
     @if (session()->has('error'))
         <div style="color: red;">{{ session('error') }}</div>
     @endif
-        <div class="bg-light-transparent px-1 py-1 mt-1 mt-3 text-white">
+        <div class="bg-light-transparent px-1 py-1 mt-3 text-white">
             <form wire:submit.prevent="createTask" class="d-flex">
                 <button class="btn p-0 fs-4">
                     <i class="fa-solid fa-square-plus text-white"></i>
