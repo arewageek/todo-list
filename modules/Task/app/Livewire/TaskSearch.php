@@ -12,21 +12,24 @@ class TaskSearch extends Component
 
     public $search = '';
     public $tasks = [];
+    public $showSearchModal = false;
 
-    public function mount(){
-        $this->fetchAuthTasks();
-    }
-
-    public function updated($propertyName)
+    public function openModal()
     {
-        
-        if ($propertyName === 'search') {
-            dd('searching');
-            $this->fetchAuthTasks(); 
-        }
+        $this->showSearchModal = true;
+        $this->fetchAuthTasks(); // Load tasks immediately when opening modal
     }
 
-    private function fetchAuthTasks()
+    // Hide the search modal
+    public function closeModal()
+    {
+        $this->showSearchModal = false;
+        $this->search = ''; // Clear search input
+        $this->tasks = []; // Clear search results
+    }
+
+
+    public function fetchAuthTasks()
     {
         if (Auth::check()) {
             $query = Task::where('user_id', Auth::id());
