@@ -2,6 +2,7 @@
 
 <div class="w-100 bg-teal py-5 px-5 d-flex flex-column justify-content-between">
     <div>
+    <livewire:task::task-search />
 
         @foreach ($tasks as $task)
             <div class="d-flex justify-content-between bg-light-transparent p-3 my-2">
