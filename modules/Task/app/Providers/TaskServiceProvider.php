@@ -10,6 +10,7 @@ use RecursiveIteratorIterator;
 
 use Livewire\Livewire;
 use Modules\Task\App\Livewire\TaskList;
+use Modules\Task\App\Livewire\TaskSearch;
 
 class TaskServiceProvider extends ServiceProvider
 {
@@ -32,6 +33,7 @@ class TaskServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(module_path($this->name, 'database/migrations'));
 
         Livewire::component('task-list', TaskList::class);
+        Livewire::component('task-search', TaskSearch::class);
     }
 
     /**

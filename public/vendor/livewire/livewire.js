@@ -9898,6 +9898,8 @@ ${expression ? 'Expression: "' + expression + '"\n\n' : ""}`, el);
   directive2("ignore", ({ el, directive: directive3 }) => {
     if (directive3.modifiers.includes("self")) {
       el.__livewire_ignore_self = true;
+    } else if (directive3.modifiers.includes("children")) {
+      el.__livewire_ignore_children = true;
     } else {
       el.__livewire_ignore = true;
     }
