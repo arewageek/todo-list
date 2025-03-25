@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Modules\Task\App\Http\Controllers\TaskController;
 use Modules\Task\App\Livewire\Index;
+use Modules\Task\App\Livewire\ListPage;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,6 @@ Route::group([], function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('myday', Index::class)->name('myday.index');
+
+    Route::get('list/{id}', ListPage::class);
 });
