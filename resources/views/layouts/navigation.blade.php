@@ -19,9 +19,7 @@
             </div>
 
             {{-- <!-- Task search-bar -- --}}
-            <div class="flex items-center">
-                <x-task::search-bar />
-            </div>
+            <x-task::search-bar />
 
             {{-- <!-- Settings Dropdown -- --}}
             <div class="hidden sm:flex sm:items-center sm:ms-6">
