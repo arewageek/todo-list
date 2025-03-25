@@ -18,6 +18,9 @@
                 </div>
             </div>
 
+            {{-- <!-- Task search-bar -- --}}
+            <x-task::search-bar />
+
             {{-- <!-- Settings Dropdown -- --}}
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <div class="relative">
@@ -56,8 +59,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6M9 16h6" />
                             </svg>
                             {{ __('Dashboard') }}
-                        </x-dropdown-link>                       
-                        
+                        </x-dropdown-link>
+
                         <hr class="border-gray-200 dark:border-gray-700" />
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
