@@ -38,6 +38,11 @@
                 </header>
             @endisset
 
+            @yield('content')
+
+            @livewireScripts
+            @stack('scripts') <!-- This ensures scripts from components are loaded -->
+
             <!-- Page Content -->
             <main>
                 {{ $slot }}

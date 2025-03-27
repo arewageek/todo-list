@@ -11,8 +11,6 @@
                             <h5 class="modal-title fw-bold text-uppercase">Edit Task</h5>
                             <button type="button" class="btn-close btn-close-white" wire:click="closeModal"></button>
                         </div>
-        
-                        <!-- Body -->
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label class="form-label fw-semibold">Title</label>
@@ -23,10 +21,10 @@
                             <div class="mb-3">
                                 <label class="form-label fw-semibold">Description</label>
                                 <textarea wire:model="description" rows="4" class="form-control bg-light-transparent text-black border-0 rounded-3 shadow-sm"></textarea>
-                                @error('description') <span class="text-danger small">{{ $message }}</span> @enderror
+                                @error('description') <span class="text-danger small">{{ @message }}</span> @enderror
                             </div>
                         </div>
-        
+
                         <!-- Footer -->
                         <div class="modal-footer border-0 d-flex justify-content-between">
                             <button type="button" class="btn btn-outline-light fw-semibold px-4 py-2 rounded-3" wire:click="closeModal">
@@ -40,9 +38,7 @@
                 </div>
             </div>
         </div>
-        
         @endif
     </div>
-    
     @endif
 </div>

@@ -1,5 +1,3 @@
-
-
 <div class="w-100 bg-teal py-5 px-5 d-flex flex-column justify-content-between">
     <div>
 
@@ -10,7 +8,6 @@
                         <div class="avatar"></div>
                     </div>
         
-        
                     <div class="text-white">
                         <div class="d-flex gap-2 mb-2">
                             <i class="fa-solid fa-lock"></i>
@@ -18,9 +15,8 @@
                         </div>
                         <h3 class="fw-bold fs-4">{{ $task->title }}</h3>    
                     </div>
-    
-    
                 </div>
+
                 <div class="d-flex gap-2">
                     <button wire:click="$dispatch('loadTask', {taskId: {{ $task->id }}})"  class="text-white">
                         <i class="fa-solid fa-pen-to-square"></i>
@@ -36,7 +32,12 @@
     <div>
         @if (session()->has('message'))
         <div style="color: green;">{{ session('message') }}</div>
-    @endif
+        @endif
+        
+        @foreach(Auth::user()->taskshare as $task)
+            <li>{{ $task->title }} (Shared)</li>
+        @endforeach
+
 
     @if (session()->has('error'))
         <div style="color: red;">{{ session('error') }}</div>
@@ -50,5 +51,4 @@
             </form>
         </div>
     </div>
-
 </div>

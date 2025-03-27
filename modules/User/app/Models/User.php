@@ -4,8 +4,10 @@ namespace Modules\User\App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Models\TaskShare;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Modules\Task\App\Models\Task;
@@ -57,5 +59,12 @@ class User extends Authenticatable
     
     public function tasks(){
         return $this->hasMany(Task::class, 'user_id', 'id');
+    }
+
+    public function taskshare(): BelongsToMany {
+        return $this->belongsToMany(Task::class, 'task_shares', 'user_id', 'task_id')
+            ->withPivot('role') // Include pivot data like role
+            ->withTimestamps();
+
     }
 }

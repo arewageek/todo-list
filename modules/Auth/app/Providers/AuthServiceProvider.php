@@ -5,6 +5,8 @@ namespace Modules\Auth\App\Providers;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Nwidart\Modules\Traits\PathNamespace;
+use App\Policies\TaskPolicy;
+use App\Models\Task;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 
@@ -132,4 +134,8 @@ class AuthServiceProvider extends ServiceProvider
 
         return $paths;
     }
+
+    protected $policies = [
+        Task::class => TaskPolicy::class,
+    ];
 }
