@@ -4,7 +4,9 @@
             <h1 class="font-bold">My lists</h1>
             <i class="fa-solid fa-lock "></i>
         </div>
-        <i class="fa-solid fa-plus"></i>
+        <button wire:click='show_create_new_list_modal'>
+            <i class="fa-solid fa-plus"></i>
+        </button>
     </div>
 
     <div class="flex flex-col mt-2">

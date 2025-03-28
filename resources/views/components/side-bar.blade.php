@@ -7,5 +7,6 @@
 
             <livewire:task::list-management />
         </div>
+        <livewire:task::modals.create-new-list />
     </div>
 @endauth()

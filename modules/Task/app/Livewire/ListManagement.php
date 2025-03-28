@@ -4,6 +4,7 @@ namespace Modules\Task\App\Livewire;
 
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Modules\Task\App\Livewire\Modals\CreateNewList;
 use Modules\Task\App\Models\ListManagement as ModelsListManagement;
 
 class ListManagement extends Component
@@ -28,23 +29,6 @@ class ListManagement extends Component
     public function fetchLists()
     {
         $this->lists = ModelsListManagement::where('user_id', Auth::id())->get();
-    }
-
-    // Create list
-    public function createList()
-    {
-        $this->validate([
-            'name' => 'required|string|max:255|unique:lists,name,NULL,id,user_id,' . Auth::id(),
-        ]);
-
-        ModelsListManagement::create([
-            'user_id' => Auth::id(),
-            'name' => $this->name,
-        ]);
-
-        $this->reset(['name']); 
-        $this->fetchLists();    
-        session()->flash('success', 'List created successfully.');
     }
 
     // Rename list
@@ -86,5 +70,11 @@ class ListManagement extends Component
         return $list->tasks();
     }
 
+    public function show_create_new_list_modal()
+    {
+        $this->dispatch("toggle-create-list-modal");
+        // $create_new_list = new CreateNewList();
+        // $create_new_list->toggle_create_list_modal();
+    }
 
 }
